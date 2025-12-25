@@ -82,7 +82,7 @@
 
 
   // Headings
-  show heading: i-figured.reset-counters
+  show heading: i-figured.reset-counters.with(extra-kinds: ("algorithm",))
 
   set heading(numbering: "1.1")
   show heading.where(level: 1): set text(size: 字号.小三)
