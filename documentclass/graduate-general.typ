@@ -87,6 +87,7 @@
   set heading(numbering: "1.1")
   show heading.where(level: 1): set text(size: 字号.小三)
   show heading.where(level: 1): x => {
+    counter(figure.where(kind: "algorithm")).update(0)
     twoside-pagebreak
     v(12pt)
     x
@@ -101,6 +102,10 @@
   // Reference
   show: show-set-supplement
   show figure: i-figured.show-figure
+  show figure.where(kind: "algorithm"): set figure(
+    supplement: "算法",
+    numbering: n => numbering("1.1", counter(heading).get().first(), n)
+  )
   show math.equation.where(block: true): i-figured.show-equation
   show figure.where(kind: table): set figure.caption(position: top)
 
